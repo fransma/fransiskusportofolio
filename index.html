@@ -11,17 +11,16 @@
 
 <!--
 =====================================================================
- FOTO YANG PERLU ANDA TAMBAHKAN (taruh di folder yang sama dengan index.html)
-   foto.jpg           -> foto profil utama (persegi, sopan & jelas)
-   foto-kerja-1.jpg   -> foto saat bekerja / tampil di panggung (landscape lebih bagus)
-   foto-kerja-2.jpg
-   foto-kerja-3.jpg
-   foto-pribadi-1.jpg -> foto pribadi
-   foto-pribadi-2.jpg
- Selama foto belum ada, halaman menampilkan kotak placeholder.
+ FILE YANG HARUS ADA (di folder yang sama dengan index.html):
+   foto.jpg             -> foto profil utama (halaman awal)
+   video-kerja-1.mp4    -> video galeri kotak 1 (format MP4)
+   video-kerja-1.jpg    -> gambar sampul (poster) video
+   foto-kerja-2.jpg     -> galeri kotak 2
+   foto-kerja-3.jpg     -> galeri kotak 3
+   foto-pribadi-1.jpg   -> galeri kotak 4
+   foto-pribadi-3.webp  -> galeri kotak 5
 
- NOMOR WHATSAPP: cari "wa.me/" lalu ganti 6281234567890
- (awali 62, tanpa 0 dan tanpa +. Contoh 0812-3456-7890 jadi 6281234567890)
+ NOMOR WHATSAPP sudah diisi: 6285731636736 (cari "wa.me/" bila ingin menggantinya)
 =====================================================================
 -->
 
@@ -128,17 +127,18 @@
   .bar{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
   .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--blue-500),var(--blue-300));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 
-  /* GALERI */
+  /* GALERI (5 kotak: 1 video + 4 foto) */
   .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:16px}
   .shot{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,var(--navy-700),var(--navy-900));cursor:zoom-in}
   .shot:nth-child(1){grid-column:span 3;grid-row:span 2}
   .shot:nth-child(2){grid-column:span 3}
   .shot:nth-child(3){grid-column:span 3}
-  .shot:nth-child(4){grid-column:span 2;grid-row:span 2}
-  .shot:nth-child(5){grid-column:span 2;grid-row:span 2}
-  .shot:nth-child(6){grid-column:span 2;grid-row:span 2}
+  .shot:nth-child(4){grid-column:span 3;grid-row:span 2}
+  .shot:nth-child(5){grid-column:span 3;grid-row:span 2}
   .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
   .shot:hover img{transform:scale(1.06)}
+  .shot video{width:100%;height:100%;object-fit:contain;display:block;background:#000}
+  .shot.video-shot{cursor:default}
   .shot .ph{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:14px;color:var(--muted);font-size:.85rem}
   .shot .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:.85rem;font-weight:600;background:linear-gradient(transparent,rgba(3,10,28,.9))}
   .shot.empty{cursor:default}
@@ -180,6 +180,7 @@
     .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
     .shot:nth-child(n){grid-column:span 1;grid-row:span 1}
     .shot:nth-child(1){grid-column:span 2;grid-row:span 2}
+    .shot:nth-child(4),.shot:nth-child(5){grid-row:span 2}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1}}
 </style>
@@ -315,12 +316,11 @@
     <h2 class="title fade">Galeri</h2>
     <p class="sub fade">Momen saat bekerja, tampil, dan keseharian. Klik foto untuk memperbesar.</p>
     <div class="gallery fade">
-      <figure class="shot"><img src="foto-kerja-1.jpg" alt="Saat bekerja di acara entertainment" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-1.jpg</div><figcaption class="cap">Saat bekerja</figcaption></figure>
+      <figure class="shot video-shot"><video src="video-kerja-1.mp4" poster="video-kerja-1.jpg" controls playsinline preload="metadata"></video></figure>
       <figure class="shot"><img src="foto-kerja-2.jpg" alt="Tampil bersama band" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-2.jpg</div><figcaption class="cap">Tampil bersama band</figcaption></figure>
       <figure class="shot"><img src="foto-kerja-3.jpg" alt="Di balik panggung" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-3.jpg</div><figcaption class="cap">Di balik panggung</figcaption></figure>
       <figure class="shot"><img src="foto-pribadi-1.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-1.jpg</div><figcaption class="cap">Foto pribadi</figcaption></figure>
-      <figure class="shot"><img src="foto-pribadi-2.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-2.jpg</div><figcaption class="cap">Keseharian</figcaption></figure>
-      <figure class="shot"><img src="foto-pribadi-3.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-3.jpg</div><figcaption class="cap">Momen lainnya</figcaption></figure>
+      <figure class="shot"><img src="foto-pribadi-3.webp" alt="Mario bersama teman dengan gitar" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-3.webp</div><figcaption class="cap">Momen lainnya</figcaption></figure>
     </div>
   </div>
 </section>
@@ -332,7 +332,7 @@
     <h2 class="title fade">Mari Berkolaborasi</h2>
     <p class="sub fade">Butuh pengisi acara, musisi, atau ingin berdiskusi? Kirim pesan langsung ke WhatsApp saya.</p>
     <a class="btn btn-wa fade"
-       href="https://wa.me/6281234567890?text=Halo%20Mario%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi."
+       href="https://wa.me/6285731636736?text=Halo%20Mario%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi."
        target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 1 1 8.400 4.700zm5.400-7.300c-.3-.1-1.800-.9-2-1s-.5-.1-.7.1-.8 1-1 1.200-.4.200-.7.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.900-1.600.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.100 2.700 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.600 4.900c2.100.9 2.900.9 3.400.8a3 3 0 0 0 2-1.400 2.500 2.500 0 0 0 .2-1.400c-.1-.1-.3-.2-.6-.3z"/></svg>
       Hubungi Saya via WhatsApp
@@ -373,11 +373,11 @@
     });
   }
 
-  // Lightbox galeri
+  // Lightbox galeri (kotak video dilewati)
   const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
   document.querySelectorAll('.shot').forEach(s=>s.addEventListener('click',()=>{
     const im=s.querySelector('img');
-    if(im.style.display==='none')return;
+    if(!im||im.style.display==='none')return;
     lbImg.src=im.src; lb.classList.add('open');
   }));
   lb.addEventListener('click',()=>lb.classList.remove('open'));
