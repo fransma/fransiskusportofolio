@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fransiskus Mario Rosari Pasut Bal | Entertainer, Musisi & Atlet</title>
+<meta name="description" content="Portofolio Fransiskus Mario Rosari Pasut Bal, mahasiswa Politeknik Negeri Madiun, entertainer, musisi, dan atlet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+=====================================================================
+ FOTO YANG PERLU ANDA TAMBAHKAN (taruh di folder yang sama dengan index.html)
+   foto.jpg           -> foto profil utama (persegi, sopan & jelas)
+   foto-kerja-1.jpg   -> foto saat bekerja / tampil di panggung (landscape lebih bagus)
+   foto-kerja-2.jpg
+   foto-kerja-3.jpg
+   foto-pribadi-1.jpg -> foto pribadi
+   foto-pribadi-2.jpg
+ Selama foto belum ada, halaman menampilkan kotak placeholder.
+
+ NOMOR WHATSAPP: cari "wa.me/" lalu ganti 6281234567890
+ (awali 62, tanpa 0 dan tanpa +. Contoh 0812-3456-7890 jadi 6281234567890)
+=====================================================================
+-->
+
+<style>
+  :root{
+    --navy-950:#030a1c; --navy-900:#061233; --navy-800:#0a1f4d; --navy-700:#0f2f6e;
+    --blue-500:#2f6bff; --blue-300:#7fb0ff; --gold:#f5b53d; --silver:#c9d4ec; --bronze:#d08a52;
+    --text:#e8eefc; --muted:#9fb0d3; --line:rgba(127,176,255,.18); --card:rgba(255,255,255,.04); --wa:#25d366;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;
+    background:linear-gradient(180deg,var(--navy-950) 0%,var(--navy-900) 30%,var(--navy-800) 65%,var(--navy-950) 100%);
+  }
+  h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.15}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .wrap{width:min(1120px,92%);margin-inline:auto}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);background:rgba(3,10,28,.7);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+  .logo{font-family:'Sora';font-weight:800;font-size:1.15rem}
+  .logo span{color:var(--blue-300)}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:.93rem;font-weight:500}
+  nav ul a{color:var(--muted);transition:color .2s}
+  nav ul a:hover{color:#fff}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;padding:130px 0 90px;display:flex;align-items:center;
+    background:
+      radial-gradient(900px 500px at 85% 20%,rgba(47,107,255,.35),transparent 60%),
+      radial-gradient(700px 500px at 0% 100%,rgba(15,47,110,.8),transparent 60%);
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .badge{display:inline-block;padding:7px 16px;border-radius:999px;background:rgba(47,107,255,.18);border:1px solid var(--line);color:var(--blue-300);font-size:.88rem;font-weight:600;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-1px}
+  .hero h1 .grad{background:linear-gradient(90deg,#fff,var(--blue-300) 60%,var(--blue-500));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .role{margin-top:18px;display:inline-block;background:var(--gold);color:var(--navy-950);font-family:'Sora';font-weight:600;font-size:1rem;padding:8px 18px;border-radius:6px}
+  .hero p.lead{margin-top:22px;color:var(--muted);font-size:1.08rem;max-width:540px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:12px;font-weight:600;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn-primary{background:linear-gradient(135deg,var(--blue-500),#1b46c9);box-shadow:0 10px 30px rgba(47,107,255,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(47,107,255,.55)}
+  .btn-ghost{border:1px solid var(--line);background:var(--card)}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+  /* FOTO ANIMASI */
+  .photo-stage{position:relative;width:min(400px,80vw);aspect-ratio:1;margin-inline:auto;transition:transform .2s ease-out}
+  .photo-float{width:100%;height:100%;position:relative;animation:float 6s ease-in-out infinite}
+  .ring{position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--blue-500),var(--gold),var(--blue-300),var(--navy-700),var(--blue-500));animation:spin 8s linear infinite}
+  .glow{position:absolute;inset:-40px;border-radius:50%;background:radial-gradient(circle,rgba(47,107,255,.55),transparent 65%);animation:pulse 4s ease-in-out infinite}
+  .photo{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:8px solid var(--navy-900);background:linear-gradient(160deg,var(--navy-700),var(--navy-900))}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .initials{position:absolute;inset:0;display:none;place-items:center;font-family:'Sora';font-weight:800;font-size:6rem;color:var(--blue-300)}
+  .orbit{position:absolute;inset:-60px;animation:spin 18s linear infinite}
+  .chip{position:absolute;padding:8px 14px;border-radius:999px;font-size:.8rem;font-weight:600;background:rgba(6,18,51,.92);border:1px solid var(--line);color:var(--blue-300);animation:spin-rev 18s linear infinite;white-space:nowrap}
+  .chip.c1{top:2%;left:50%;transform:translateX(-50%)}
+  .chip.c2{top:50%;right:-4%;transform:translateY(-50%)}
+  .chip.c3{bottom:2%;left:50%;transform:translateX(-50%)}
+  .chip.c4{top:50%;left:-4%;transform:translateY(-50%)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes spin-rev{to{rotate:-360deg}}
+  @keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+
+  /* SECTIONS */
+  section{padding:100px 0}
+  .title{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;margin-bottom:14px}
+  .sub{color:var(--muted);max-width:640px;margin-bottom:46px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+  .about-grid p{color:var(--muted);margin-bottom:16px}
+  .facts{display:grid;gap:14px;margin-bottom:34px}
+  .fact{padding:18px 22px;border-radius:16px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue-500)}
+  .fact small{color:var(--blue-300);font-weight:600;display:block;margin-bottom:2px}
+  .fact b{font-family:'Sora';font-weight:600}
+  .timeline-title{font-family:'Sora';font-weight:600;font-size:1.1rem;margin-bottom:18px}
+  .timeline{position:relative;padding-left:26px;border-left:2px solid var(--line);display:grid;gap:22px}
+  .tl-item{position:relative}
+  .tl-item::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--blue-500);border:3px solid var(--navy-900);box-shadow:0 0 0 2px var(--blue-500)}
+  .tl-item.now::before{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+  .tl-item b{font-family:'Sora';font-weight:600;display:block}
+  .tl-item span{color:var(--muted);font-size:.92rem}
+
+  /* PRESTASI */
+  .awards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .award{padding:26px;border-radius:18px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+  .award:hover{transform:translateY(-5px)}
+  .award::after{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--medal)}
+  .award.gold{--medal:var(--gold)} .award.bronze{--medal:var(--bronze)}
+  .medal{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-family:'Sora';font-weight:800;font-size:1.4rem;color:var(--navy-950);background:var(--medal);margin-bottom:16px;box-shadow:0 0 22px color-mix(in srgb,var(--medal) 45%,transparent)}
+  .award h3{font-size:1.05rem;margin-bottom:6px}
+  .award p{color:var(--muted);font-size:.92rem}
+  .award .year{margin-top:12px;display:inline-block;font-size:.8rem;font-weight:600;color:var(--blue-300)}
+
+  /* SKILLS */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+  .skill .row{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:600;font-size:.95rem}
+  .skill .row span:last-child{color:var(--blue-300)}
+  .bar{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--blue-500),var(--blue-300));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+  /* GALERI */
+  .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:16px}
+  .shot{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,var(--navy-700),var(--navy-900));cursor:zoom-in}
+  .shot:nth-child(1){grid-column:span 3;grid-row:span 2}
+  .shot:nth-child(2){grid-column:span 3}
+  .shot:nth-child(3){grid-column:span 3}
+  .shot:nth-child(4){grid-column:span 2;grid-row:span 2}
+  .shot:nth-child(5){grid-column:span 2;grid-row:span 2}
+  .shot:nth-child(6){grid-column:span 2;grid-row:span 2}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+  .shot:hover img{transform:scale(1.06)}
+  .shot .ph{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:14px;color:var(--muted);font-size:.85rem}
+  .shot .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:.85rem;font-weight:600;background:linear-gradient(transparent,rgba(3,10,28,.9))}
+  .shot.empty{cursor:default}
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(3,10,28,.92);display:none;place-items:center;padding:24px;cursor:zoom-out}
+  .lightbox.open{display:grid}
+  .lightbox img{max-width:100%;max-height:90vh;border-radius:14px}
+
+  /* PROYEK */
+  .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:70px}
+  .project{border-radius:18px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .25s,border-color .25s}
+  .project:hover{transform:translateY(-6px);border-color:var(--blue-500)}
+  .thumb{height:130px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy-700),var(--blue-500));font-family:'Sora';font-weight:800;font-size:2.2rem}
+  .project .body{padding:22px}
+  .project h3{font-size:1.05rem;margin-bottom:8px}
+  .project p{color:var(--muted);font-size:.92rem}
+  .tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+  .tags span{font-size:.75rem;padding:4px 10px;border-radius:99px;background:rgba(47,107,255,.2);color:var(--blue-300)}
+
+  /* CONTACT */
+  .contact{text-align:center;background:radial-gradient(700px 360px at 50% 0%,rgba(47,107,255,.35),transparent 70%),linear-gradient(180deg,transparent,var(--navy-950));border-top:1px solid var(--line)}
+  .contact .sub{margin-inline:auto}
+  .btn-wa{background:var(--wa);color:#062b12;font-size:1.15rem;padding:18px 36px;animation:ping 2.2s infinite}
+  .btn-wa:hover{transform:translateY(-3px);filter:brightness(1.08)}
+  .btn-wa svg{width:26px;height:26px}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 22px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+
+  .fade{opacity:0;transition:opacity .8s}
+  .fade.show{opacity:1}
+
+  @media (max-width:900px){
+    nav ul{display:none}
+    .hero .wrap,.about-grid{grid-template-columns:1fr}
+    .hero{text-align:center;padding-top:110px}
+    .hero p.lead{margin-inline:auto}
+    .btns{justify-content:center}
+    .photo-stage{order:-1;margin-bottom:50px}
+    .skills,.projects,.awards{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
+    .shot:nth-child(n){grid-column:span 1;grid-row:span 1}
+    .shot:nth-child(1){grid-column:span 2;grid-row:span 2}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#home" class="logo">Mario<span>.</span></a>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang Saya</a></li>
+      <li><a href="#prestasi">Prestasi</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <span class="badge">Mahasiswa Politeknik Negeri Madiun</span>
+      <h1>Fransiskus Mario <span class="grad">Rosari Pasut Bal</span></h1>
+      <div class="role">Entertainer · Musisi · Atlet Basket</div>
+      <p class="lead">Mahasiswa yang aktif di dunia entertainment dan olahraga. Saya bermain di band hiburan di Kota Madiun, bekerja freelance di bidang entertainment, dan meraih banyak juara tingkat kota.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#prestasi">Lihat Prestasi</a>
+        <a class="btn btn-ghost" href="#contact">Hubungi Saya</a>
+      </div>
+    </div>
+
+    <div class="photo-stage">
+      <div class="glow"></div>
+      <div class="orbit">
+        <span class="chip c1">Gitaris</span>
+        <span class="chip c2">Atlet Basket</span>
+        <span class="chip c3">Entertainer</span>
+        <span class="chip c4">Mahasiswa</span>
+      </div>
+      <div class="photo-float">
+        <div class="ring"></div>
+        <div class="photo">
+          <img src="foto.jpg" alt="Foto profil Fransiskus Mario Rosari Pasut Bal"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="initials">FM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="title fade">Tentang Saya</h2>
+    <p class="sub fade">Latar belakang pendidikan, minat, dan kegiatan yang saya jalani.</p>
+    <div class="about-grid">
+      <div class="fade">
+        <div class="facts">
+          <div class="fact"><small>Nama lengkap</small><b>Fransiskus Mario Rosari Pasut Bal</b></div>
+          <div class="fact"><small>Kampus</small><b>Politeknik Negeri Madiun</b></div>
+          <div class="fact"><small>NIM</small><b>243307011</b></div>
+        </div>
+        <p>Sejak sekolah dasar saya aktif di olahraga dan musik. Basket, tolak peluru, dan lempar lembing melatih disiplin dan mental juara, sedangkan gitar membawa saya ke panggung.</p>
+        <p>Saat ini saya aktif di sebuah band entertainment di Kota Madiun dan bekerja freelance di bidang entertainment. Di bangku kuliah, saya belajar membangun kehadiran digital agar karya dan pengalaman saya mudah ditemukan, termasuk lewat halaman portofolio ini.</p>
+      </div>
+      <div class="fade">
+        <h3 class="timeline-title">Riwayat pendidikan</h3>
+        <div class="timeline">
+          <div class="tl-item now"><b>Politeknik Negeri Madiun</b><span>Mahasiswa aktif, NIM 243307011</span></div>
+          <div class="tl-item"><b>SMAN 5 Madiun</b><span>Pendidikan terakhir sebelum kuliah</span></div>
+          <div class="tl-item"><b>SMP Santo Yusuf Madiun</b><span>Sekolah menengah pertama</span></div>
+          <div class="tl-item"><b>SDK Santo Yusuf Madiun</b><span>Sekolah dasar</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESTASI -->
+<section id="prestasi">
+  <div class="wrap">
+    <h2 class="title fade">Prestasi</h2>
+    <p class="sub fade">Penghargaan di bidang olahraga dan musik, dari tingkat kota sampai turnamen basket.</p>
+    <div class="awards fade">
+      <article class="award gold"><div class="medal">1</div><h3>Juara 1 Lomba Basket Putra</h3><p>Tingkat Kota Madiun</p><span class="year">2017</span></article>
+      <article class="award gold"><div class="medal">1</div><h3>Juara 1 Tolak Peluru</h3><p>Cabang atletik</p><span class="year">2018</span></article>
+      <article class="award gold"><div class="medal">1</div><h3>Juara 1 Lempar Lembing</h3><p>Tingkat Kota Madiun</p><span class="year">2018</span></article>
+      <article class="award gold"><div class="medal">★</div><h3>Best Gitaris 1 Kota Madiun</h3><p>Penghargaan di bidang musik</p><span class="year">2018</span></article>
+      <article class="award bronze"><div class="medal">3</div><h3>Juara 3 Lomba Basket</h3><p>TDM Cup</p><span class="year">2023</span></article>
+      <article class="award bronze"><div class="medal">3</div><h3>Juara 3 Lomba Basket</h3><p>Willis Basketball Cup</p><span class="year">2023</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="title fade">Keahlian</h2>
+    <p class="sub fade">Keterampilan yang saya kuasai dari panggung, lapangan, dan kuliah.</p>
+    <div class="skills fade">
+      <div class="skill"><div class="row"><span>Bermain Gitar</span><span>90%</span></div><div class="bar"><i data-level="90"></i></div></div>
+      <div class="skill"><div class="row"><span>Tampil di Panggung (Entertainment)</span><span>88%</span></div><div class="bar"><i data-level="88"></i></div></div>
+      <div class="skill"><div class="row"><span>Basket</span><span>85%</span></div><div class="bar"><i data-level="85"></i></div></div>
+      <div class="skill"><div class="row"><span>Atletik (Tolak Peluru &amp; Lempar Lembing)</span><span>80%</span></div><div class="bar"><i data-level="80"></i></div></div>
+      <div class="skill"><div class="row"><span>Kerja Tim &amp; Kepemimpinan</span><span>85%</span></div><div class="bar"><i data-level="85"></i></div></div>
+      <div class="skill"><div class="row"><span>Web Dasar (HTML &amp; CSS)</span><span>60%</span></div><div class="bar"><i data-level="60"></i></div></div>
+    </div>
+
+    <div class="projects fade">
+      <article class="project">
+        <div class="thumb">♪</div>
+        <div class="body"><h3>Band Entertainment Madiun</h3><p>Tampil di berbagai acara sebagai bagian dari band entertainment di Kota Madiun.</p><div class="tags"><span>Musik</span><span>Live Performance</span></div></div>
+      </article>
+      <article class="project">
+        <div class="thumb">★</div>
+        <div class="body"><h3>Freelance Entertainment</h3><p>Bekerja lepas di bidang entertainment dan terbiasa bekerja dengan jadwal acara.</p><div class="tags"><span>Freelance</span><span>Event</span></div></div>
+      </article>
+      <article class="project">
+        <div class="thumb">&lt;/&gt;</div>
+        <div class="body"><h3>Landing Page Profil Pribadi</h3><p>Halaman portofolio ini, dibuat sebagai tugas individu dengan HTML, CSS, dan JavaScript.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri">
+  <div class="wrap">
+    <h2 class="title fade">Galeri</h2>
+    <p class="sub fade">Momen saat bekerja, tampil, dan keseharian. Klik foto untuk memperbesar.</p>
+    <div class="gallery fade">
+      <figure class="shot"><img src="foto-kerja-1.jpg" alt="Saat bekerja di acara entertainment" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-1.jpg</div><figcaption class="cap">Saat bekerja</figcaption></figure>
+      <figure class="shot"><img src="foto-kerja-2.jpg" alt="Tampil bersama band" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-2.jpg</div><figcaption class="cap">Tampil bersama band</figcaption></figure>
+      <figure class="shot"><img src="foto-kerja-3.jpg" alt="Di balik panggung" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-kerja-3.jpg</div><figcaption class="cap">Di balik panggung</figcaption></figure>
+      <figure class="shot"><img src="foto-pribadi-1.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-1.jpg</div><figcaption class="cap">Foto pribadi</figcaption></figure>
+      <figure class="shot"><img src="foto-pribadi-2.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-2.jpg</div><figcaption class="cap">Keseharian</figcaption></figure>
+      <figure class="shot"><img src="foto-pribadi-3.jpg" alt="Foto pribadi Mario" onerror="ph(this)"><div class="ph">Tambahkan<br>foto-pribadi-3.jpg</div><figcaption class="cap">Momen lainnya</figcaption></figure>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox"><img alt="Foto diperbesar"></div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="title fade">Mari Berkolaborasi</h2>
+    <p class="sub fade">Butuh pengisi acara, musisi, atau ingin berdiskusi? Kirim pesan langsung ke WhatsApp saya.</p>
+    <a class="btn btn-wa fade"
+       href="https://wa.me/6281234567890?text=Halo%20Mario%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi."
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 1 1 8.400 4.700zm5.400-7.300c-.3-.1-1.800-.9-2-1s-.5-.1-.7.1-.8 1-1 1.200-.4.200-.7.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.900-1.600.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.100 2.700 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.600 4.900c2.100.9 2.900.9 3.400.8a3 3 0 0 0 2-1.400 2.500 2.500 0 0 0 .2-1.400c-.1-.1-.3-.2-.6-.3z"/></svg>
+      Hubungi Saya via WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; 2026 Fransiskus Mario Rosari Pasut Bal · NIM 243307011 · Politeknik Negeri Madiun</div>
+</footer>
+
+<script>
+  // Placeholder bila foto belum ada
+  function ph(img){
+    img.style.display='none';
+    img.nextElementSibling.style.display='grid';
+    img.parentElement.classList.add('empty');
+  }
+
+  // Muncul saat scroll + animasi bar keahlian
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.level+'%');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+  // Foto hero mengikuti mouse
+  const stage = document.querySelector('.photo-stage');
+  if(stage && matchMedia('(hover:hover)').matches){
+    document.addEventListener('mousemove',e=>{
+      const x=(e.clientX/innerWidth-.5)*14, y=(e.clientY/innerHeight-.5)*14;
+      stage.style.transform=`translate(${x}px,${y}px)`;
+    });
+  }
+
+  // Lightbox galeri
+  const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
+  document.querySelectorAll('.shot').forEach(s=>s.addEventListener('click',()=>{
+    const im=s.querySelector('img');
+    if(im.style.display==='none')return;
+    lbImg.src=im.src; lb.classList.add('open');
+  }));
+  lb.addEventListener('click',()=>lb.classList.remove('open'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+</script>
+</body>
+</html>
